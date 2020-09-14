@@ -8,9 +8,7 @@ import java.util.Random;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
-import javax.faces.bean.ViewScoped;
 import javax.faces.context.FacesContext;
-import javax.faces.model.ListDataModel;
 
 import net.etfbl.ip.marko.dao.UserDAO;
 import net.etfbl.ip.marko.dto.User;

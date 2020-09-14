@@ -5,6 +5,9 @@
     xmlns:h="http://java.sun.com/jsf/html"
     xmlns:ui="http://java.sun.com/jsf/facelets"
     xmlns:f="http://java.sun.com/jsf/core">
+    <f:metadata>
+    	<f:viewParam name="param1" value="#{loginBean.activity}"></f:viewParam>
+    </f:metadata>
 <h:head>
 	<meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -12,7 +15,7 @@
     <h:outputScript library="js" name="Chart.bundle.min.js" />
     <link rel="shortcut icon" href=""/>
 </h:head>
-<h:body>
+<h:body onload="drawChart(#{loginBean.activity})">
     <div id="navbar">
         <ui:insert name="navbar">
         	<ui:include src="/WEB-INF/components/navbar.xhtml" />
