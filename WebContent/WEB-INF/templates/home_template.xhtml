@@ -9,6 +9,8 @@
 	<meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <h:outputStylesheet src="resources/styles.css" name="styles.css" library="css" />
+    <h:outputScript library="js" name="Chart.bundle.min.js" />
+    <link rel="shortcut icon" href=""/>
 </h:head>
 <h:body>
     <div id="navbar">
@@ -19,7 +21,7 @@
     <br />
     <div id="users">
         <ui:insert name="body_users">
-        	<ui:include src="/WEB-INF/components/body_users.xhtml" />
+        	<ui:include src="/WEB-INF/components/body_home.xhtml" />
         </ui:insert>
     </div>
     <br />
@@ -28,5 +30,6 @@
         	<ui:include src="/WEB-INF/components/footer.xhtml" />
         </ui:insert>
     </div>
+    <h:outputScript library="js" name="chart.js" />
 </h:body>
 </html>

@@ -1,15 +1,11 @@
-<!DOCTYPE html>
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:ui="http://java.sun.com/jsf/facelets"
-	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:f="http://java.sun.com/jsf/core">
-	<h:head>
-	</h:head>
-	<h:body>
-		<h1>HOME</h1>
-		<h:outputLabel value="Online Users: "></h:outputLabel>
-		<h:outputLabel value="#{loginBean.numberOfOnlineUsers}"/>
-		<h:outputLabel value="Registered Users: "></h:outputLabel>
-		<h:outputLabel value="#{userBean.numberOfRegisteredUsers}"/>
-	</h:body>
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:body>
+    <ui:composition template="/WEB-INF/templates/home_template.xhtml">
+    </ui:composition>
+</h:body>
 </html>

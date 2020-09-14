@@ -4,6 +4,10 @@ import java.io.Serializable;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.faces.context.FacesContext;
+import javax.servlet.http.HttpSession;
+
+import org.apache.catalina.manager.util.SessionUtils;
 
 import net.etfbl.ip.marko.dao.AdminDAO;
 import net.etfbl.ip.marko.dto.Admin;
@@ -29,6 +33,13 @@ public class AdminBean implements Serializable{
 			retVal = "success";
 		}
 		return retVal;
+	}
+	
+	public String logout() {
+		FacesContext facesContext = FacesContext.getCurrentInstance();
+		HttpSession session = (HttpSession) facesContext.getExternalContext().getSession(true);
+		session.invalidate();
+		return "index";
 	}
 
 	public Admin getAdmin() {

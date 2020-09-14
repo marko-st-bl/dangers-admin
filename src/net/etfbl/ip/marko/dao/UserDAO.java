@@ -58,4 +58,47 @@ public class UserDAO {
 			ConnectionPool.getConnectionPool().checkIn(conn);
 		}
 	}
+
+	public void blockUser(int id) {
+		Connection conn = null;
+		PreparedStatement ps =null;
+		
+		String query = "update user set status='blocked' where id=?";
+		
+		try {
+			conn = ConnectionPool.getConnectionPool().checkOut();
+			ps = conn.prepareStatement(query);
+			ps.setInt(1, id);
+			
+			ps.executeUpdate();
+			
+			ps.close();
+		} catch(SQLException e) {
+			e.printStackTrace();
+		} finally {
+			ConnectionPool.getConnectionPool().checkIn(conn);
+		}
+		
+	}
+
+	public void activate(int id) {
+		Connection conn = null;
+		PreparedStatement ps =null;
+		
+		String query = "update user set status='active' where id=?";
+		
+		try {
+			conn = ConnectionPool.getConnectionPool().checkOut();
+			ps = conn.prepareStatement(query);
+			ps.setInt(1, id);
+			
+			ps.executeUpdate();
+			
+			ps.close();
+		} catch(SQLException e) {
+			e.printStackTrace();
+		} finally {
+			ConnectionPool.getConnectionPool().checkIn(conn);
+		}
+	}
 }

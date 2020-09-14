@@ -22,10 +22,11 @@ public class LoginBean implements Serializable{
 	
 	public LoginBean() {
 		super();
+		this.numberOfOnlineUsers=new LoginDAO().getNumberOfOnlineUsers();
 	}
 	
 	public int getNumberOfOnlineUsers() {
-		return new LoginDAO().getNumberOfOnlineUsers();
+		return numberOfOnlineUsers;
 	}
 
 	public void setNumberOfOnlineUsers(int numberOfOnlineUsers) {
