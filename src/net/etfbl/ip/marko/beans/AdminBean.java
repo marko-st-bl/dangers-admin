@@ -2,17 +2,17 @@ package net.etfbl.ip.marko.beans;
 
 import java.io.Serializable;
 
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 import javax.servlet.http.HttpSession;
 
-import org.apache.catalina.manager.util.SessionUtils;
 
 import net.etfbl.ip.marko.dao.AdminDAO;
 import net.etfbl.ip.marko.dto.Admin;
 
-@ManagedBean
+@ManagedBean(name = "adminBean")
 @SessionScoped
 public class AdminBean implements Serializable{
 
@@ -28,10 +28,17 @@ public class AdminBean implements Serializable{
 	}
 	
 	public String login() {
-		String retVal = "invalid";
-		if(new AdminDAO().getAdminByUsernamePassword(admin.getUsername(), admin.getPassword()) != null) {
-			retVal = "success";
+		String retVal = "";
+		Admin admin1 = new AdminDAO().getAdminByUsernamePassword(admin.getUsername(), admin.getPassword());
+		if(admin1 != null) {
+			admin = admin1;
+			HttpSession session = (HttpSession) FacesContext.getCurrentInstance().getExternalContext().getSession(true);
+			session.setAttribute("admin", admin);
+			retVal = "index.xhtml?faces-redirect=true";
+			System.out.println("ok");
 		}
+		FacesContext context = FacesContext.getCurrentInstance();
+		context.addMessage("login-form:login-btn", new FacesMessage("Invalid username/password."));
 		return retVal;
 	}
 	
@@ -39,7 +46,7 @@ public class AdminBean implements Serializable{
 		FacesContext facesContext = FacesContext.getCurrentInstance();
 		HttpSession session = (HttpSession) facesContext.getExternalContext().getSession(true);
 		session.invalidate();
-		return "index";
+		return "login.xhtml?faces-redirect=true";
 	}
 
 	public Admin getAdmin() {

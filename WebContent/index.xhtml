@@ -1,37 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:f="http://java.sun.com/jsf/core">
-<h:head>
-	<title>Dangers Info | Admin</title>
-	<h:outputStylesheet library="css" name="styles.css" />
-</h:head>
-<body>
-	<section id="login" class="page-section">
-		<div class="container justify-content-center align-items-center">
-			<div class="text-center">
-				<h2 class="section-heading text-uppercase text-primary">Login</h2>
-			</div>
-			<h:form id="login-form">
-				<div class="form-group row justify-content-center">
-					<h:outputLabel value="Username: " />
-				</div>
-				<div class="form-group row justify-content-center">
-					<h:inputText class="form-control col-md-6 col-lg-5"
-						value="#{adminBean.admin.username}" />
-				</div>
-				<div class="form-group row justify-content-center">
-						<h:outputLabel value="Password:" />
-				</div>
-					<div class="form-group row justify-content-center">
-						<h:inputSecret class="form-control col-md-6 col-lg-5" value="#{adminBean.admin.password}" />
-					</div>
-					<div class="text-center">
-						<h:commandButton class="btn btn-primary btn-xl text-uppercase"
-							value="Login" action="#{adminBean.login}" />
-					</div>
-			</h:form>
-		</div>
-	</section>
-</body>
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:body>
+	<ui:composition template="/WEB-INF/templates/home_template.xhtml">
+	</ui:composition>
+</h:body>
 </html>

@@ -1,7 +1,2 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf15999248618121" configfile="/dangers-admin/WebContent/WEB-INF/faces-config.xml">
-  <nodes xsi:type="pageflow:PFPage" name="index.xhtml" id="pf15999250395812" referenceLink="//@navigationRule.0/@navigationCase.1/@toViewId|" outlinks="pf15999250395813 pf15999251351695" inlinks="pf15999251351695" path="/index.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="home.xhtml" id="pf15999250395814" referenceLink="//@navigationRule.0/@navigationCase.0/@toViewId|" inlinks="pf15999250395813" path="/home.xhtml"/>
-  <links id="pf15999250395813" target="pf15999250395814" source="pf15999250395812" outcome="success" fromaction="#{adminBean.login}"/>
-  <links id="pf15999251351695" target="pf15999250395812" source="pf15999250395812" outcome="invalid" fromaction="#{adminBean.login}"/>
-</pageflow:Pageflow>
+<pageflow:Pageflow xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf15999248618121" configfile="/dangers-admin/WebContent/WEB-INF/faces-config.xml"/>
