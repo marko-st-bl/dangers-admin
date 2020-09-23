@@ -68,7 +68,7 @@
 							<f:facet name="header">
 								<h:outputText value="Block User"></h:outputText>
 							</f:facet>
-							<h:commandButton class="btn-primary" value="block"
+							<h:commandButton class="btn btn-primary" value="block"
 								action="#{userBean.blockUser}">
 								<f:param value="${user.id}" name="id" />
 							</h:commandButton>
@@ -77,7 +77,7 @@
 							<f:facet name="header">
 								<h:outputText value="Reset password"></h:outputText>
 							</f:facet>
-							<h:commandButton class="btn-primary" value="reset"
+							<h:commandButton class="btn btn-primary" value="reset"
 								action="#{userBean.resetPassword}">
 								<f:param value="${user.id}" name="id" />
 							</h:commandButton>
@@ -86,7 +86,7 @@
 							<f:facet name="header">
 								<h:outputText value="Validate User"></h:outputText>
 							</f:facet>
-							<h:commandButton class="btn-primary" value="activate"
+							<h:commandButton class="btn btn-primary" value="activate"
 								action="#{userBean.activate}">
 								<f:param value="${user.id}" name="id" />
 							</h:commandButton>
