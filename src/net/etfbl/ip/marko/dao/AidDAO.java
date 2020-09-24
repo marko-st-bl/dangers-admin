@@ -45,8 +45,8 @@ public class AidDAO {
 				for (int i=0; i<result.length(); i++) {
 					JSONObject jsonAid = result.getJSONObject(i);
 					retVal.add(new Aid(jsonAid.getInt("id"), jsonAid.getString("title"), 
-							jsonAid.getString("description"), jsonAid.getString("imageUrl"), 
-							jsonAid.getString("address"), jsonAid.getString("category")));
+							jsonAid.getString("description"), jsonAid.getString("address"), jsonAid.getString("date"), 
+							jsonAid.getString("imageUrl"), jsonAid.getString("category")));
 				}
 			} catch(JSONException e) {
 				e.printStackTrace();
@@ -58,6 +58,22 @@ public class AidDAO {
 		}
 		
 		return retVal;
+	}
+	
+	public void deleteAid(int id) {
+		try {
+			URL url = new URL(BASE_URL + id);
+			HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+			conn.setRequestMethod("DELETE");
+			conn.setRequestProperty("Accept", "application/json");
+			
+			if(conn.getResponseCode() != HttpURLConnection.HTTP_OK) {
+				throw new RuntimeException("Failed: HTTP error code: " + conn.getResponseCode());
+			}
+			
+		} catch(IOException e) {
+			e.printStackTrace();
+		}
 	}
 
 }

@@ -1,7 +1,6 @@
 package net.etfbl.ip.marko.dto;
 
 import java.io.Serializable;
-import java.util.Date;
 
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -18,7 +17,7 @@ public class Aid implements Serializable {
 	private String title;
 	private String description;
 	private String imageUrl;
-	private Date date;
+	private String date;
 	private String address;
 	private String status;
 	private String category;
@@ -27,7 +26,7 @@ public class Aid implements Serializable {
 		super();
 	}
 	
-	public Aid(int id, String title, String description, String imageUrl, String address, String category) {
+	public Aid(int id, String title, String description, String imageUrl, String address,  String category) {
 		this.id = id;
 		this.title = title;
 		this.description = description;
@@ -44,18 +43,7 @@ public class Aid implements Serializable {
 		this.category = category;
 	}
 
-	public Aid(int id, String title, String description, String imgUrl, String location, String status,
-			String category) {
-		this.id = id;
-		this.title = title;
-		this.description = description;
-		this.imageUrl = imgUrl;
-		this.address = location;
-		this.status = status;
-		this.category = category;
-	}
-
-	public Aid(int id, String title, String description, String location, Date date, String image, String category) {
+	public Aid(int id, String title, String description, String location, String date, String image, String category) {
 		this.id = id;
 		this.title = title;
 		this.description = description;
@@ -128,12 +116,12 @@ public class Aid implements Serializable {
 		this.category = category;
 	}
 
-	public Date getDate() {
+	public String getDate() {
 		return date;
 	}
 
 	@XmlElement
-	public void setDate(Date date) {
+	public void setDate(String date) {
 		this.date = date;
 	}
 

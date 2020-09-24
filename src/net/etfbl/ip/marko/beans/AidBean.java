@@ -2,12 +2,16 @@ package net.etfbl.ip.marko.beans;
 
 import java.io.Serializable;
 import java.util.List;
+import java.util.Map;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.faces.context.FacesContext;
 
 import net.etfbl.ip.marko.dao.AidDAO;
+import net.etfbl.ip.marko.dao.CategoryDAO;
 import net.etfbl.ip.marko.dto.Aid;
+import net.etfbl.ip.marko.dto.Category;
 
 @ManagedBean(name = "aidBean")
 @SessionScoped
@@ -43,8 +47,22 @@ public class AidBean implements Serializable{
 		this.aids = aids;
 	}
 	
-	public void deleteAid() {
-		
+	public void deleteAid() { 
+		System.out.println("called delete");
+		Map<String, String> reqMap = FacesContext.getCurrentInstance().getExternalContext().getRequestParameterMap();
+		if (reqMap.containsKey("aidId")) {
+			int id = Integer.parseInt(reqMap.get("aidId"));
+			System.out.println(id);
+			Aid aidToDelete = new Aid();
+			for(Aid aid: aids) {
+				if(aid.getId() == id) {
+					aidToDelete = aid;
+					new AidDAO().deleteAid(id);
+					break;
+				}
+			}
+			aids.remove(aidToDelete);
+		}
 	}
 	
 	
