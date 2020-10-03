@@ -46,7 +46,7 @@ public class AidDAO {
 					JSONObject jsonAid = result.getJSONObject(i);
 					retVal.add(new Aid(jsonAid.getInt("id"), jsonAid.getString("title"), 
 							jsonAid.getString("description"), jsonAid.getString("address"), jsonAid.getString("date"), 
-							jsonAid.getString("imageUrl"), jsonAid.getString("category")));
+							jsonAid.getString("imageUrl"), jsonAid.getString("category"), jsonAid.getBoolean("reportedAsFalse")));
 				}
 			} catch(JSONException e) {
 				e.printStackTrace();

@@ -2,10 +2,7 @@ package net.etfbl.ip.marko.dto;
 
 import java.io.Serializable;
 
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
 
-@XmlRootElement(name = "aid") 
 public class Aid implements Serializable {
 
 	/**
@@ -21,18 +18,20 @@ public class Aid implements Serializable {
 	private String address;
 	private String status;
 	private String category;
+	private boolean reportedAsFalse;
 
 	public Aid() {
 		super();
 	}
 	
-	public Aid(int id, String title, String description, String imageUrl, String address,  String category) {
+	public Aid(int id, String title, String description, String imageUrl, String address,  String category, boolean reported) {
 		this.id = id;
 		this.title = title;
 		this.description = description;
 		this.imageUrl = imageUrl;
 		this.address = address;
 		this.category = category;
+		this.reportedAsFalse = reported;
 	}
 
 	public Aid(String title, String description, String imgUrl, String location, String category) {
@@ -43,7 +42,8 @@ public class Aid implements Serializable {
 		this.category = category;
 	}
 
-	public Aid(int id, String title, String description, String location, String date, String image, String category) {
+	public Aid(int id, String title, String description, String location, String date, String image, String category,
+			boolean reportedAsFalse) {
 		this.id = id;
 		this.title = title;
 		this.description = description;
@@ -51,6 +51,7 @@ public class Aid implements Serializable {
 		this.date = date;
 		this.imageUrl = image;
 		this.category = category;
+		this.reportedAsFalse = reportedAsFalse;
 	}
 
 	
@@ -58,7 +59,6 @@ public class Aid implements Serializable {
 		return id;
 	}
 
-	@XmlElement
 	public void setId(int id) {
 		this.id = id;
 	}
@@ -67,7 +67,6 @@ public class Aid implements Serializable {
 		return title;
 	}
 
-	@XmlElement
 	public void setTitle(String title) {
 		this.title = title;
 	}
@@ -76,7 +75,6 @@ public class Aid implements Serializable {
 		return description;
 	}
 
-	@XmlElement
 	public void setDescription(String description) {
 		this.description = description;
 	}
@@ -85,7 +83,6 @@ public class Aid implements Serializable {
 		return imageUrl;
 	}
 
-	@XmlElement
 	public void setImageUrl(String imgUrl) {
 		this.imageUrl = imgUrl;
 	}
@@ -94,7 +91,6 @@ public class Aid implements Serializable {
 		return address;
 	}
 
-	@XmlElement
 	public void setAddress(String address) {
 		this.address = address;
 	}
@@ -111,7 +107,6 @@ public class Aid implements Serializable {
 		return category;
 	}
 
-	@XmlElement
 	public void setCategory(String category) {
 		this.category = category;
 	}
@@ -120,9 +115,16 @@ public class Aid implements Serializable {
 		return date;
 	}
 
-	@XmlElement
 	public void setDate(String date) {
 		this.date = date;
+	}
+
+	public boolean getReportedAsFalse() {
+		return reportedAsFalse;
+	}
+
+	public void setReportedAsFalse(boolean reportedAsFalse) {
+		this.reportedAsFalse = reportedAsFalse;
 	}
 
 }
