@@ -19,7 +19,7 @@ public class CategoryDAO {
 		ResultSet rs = null;
 		
 		String query = "select id, name "
-				+ "from danger_category";
+				+ "from category";
 		
 		try {
 			conn = ConnectionPool.getConnectionPool().checkOut();
@@ -69,7 +69,7 @@ public class CategoryDAO {
 		Connection conn = null;
 		PreparedStatement ps = null;
 		
-		String query = "delete from danger_category where id=?";
+		String query = "delete from category where id=?";
 		
 		try {
 			conn = ConnectionPool.getConnectionPool().checkOut();

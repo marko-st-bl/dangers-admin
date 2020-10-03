@@ -9,9 +9,7 @@ import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 
 import net.etfbl.ip.marko.dao.AidDAO;
-import net.etfbl.ip.marko.dao.CategoryDAO;
 import net.etfbl.ip.marko.dto.Aid;
-import net.etfbl.ip.marko.dto.Category;
 
 @ManagedBean(name = "aidBean")
 @SessionScoped
