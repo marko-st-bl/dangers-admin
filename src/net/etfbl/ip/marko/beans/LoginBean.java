@@ -4,14 +4,14 @@ import java.io.Serializable;
 import java.util.Map;
 
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.SessionScoped;
+import javax.faces.bean.ViewScoped;
 
 import com.google.gson.Gson;
 
 import net.etfbl.ip.marko.dao.LoginDAO;
 
 @ManagedBean
-@SessionScoped
+@ViewScoped
 public class LoginBean implements Serializable{
 
 	/**

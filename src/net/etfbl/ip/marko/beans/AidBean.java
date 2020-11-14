@@ -5,14 +5,14 @@ import java.util.List;
 import java.util.Map;
 
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.SessionScoped;
+import javax.faces.bean.ViewScoped;
 import javax.faces.context.FacesContext;
 
 import net.etfbl.ip.marko.dao.AidDAO;
 import net.etfbl.ip.marko.dto.Aid;
 
 @ManagedBean(name = "aidBean")
-@SessionScoped
+@ViewScoped
 public class AidBean implements Serializable{
 	
 	/**

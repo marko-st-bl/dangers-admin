@@ -45,7 +45,7 @@ public class LoginDAO {
 		String query = "select hour(loginTime) as h, count(*) as users "
 				+ "from login "
 				+ "where loginTime > date_sub(CURRENT_TIMESTAMP, INTERVAL 1 day) "
-				+ "group by hour(loginTime), userId";
+				+ "group by hour(loginTime)";
 
 		try {
 			conn = ConnectionPool.getConnectionPool().checkOut();

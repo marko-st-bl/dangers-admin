@@ -29,9 +29,9 @@
 		<param-value>resources.application</param-value>
 	</context-param>
 	 <filter>
-    <filter-name>AuthListener</filter-name>
-    <filter-class>net.etfbl.ip.marko.auth.AuthListener</filter-class>
-  </filter>
+    	<filter-name>AuthListener</filter-name>
+    	<filter-class>net.etfbl.ip.marko.auth.AuthListener</filter-class>
+  	</filter>
   <filter-mapping>
     <filter-name>AuthListener</filter-name>
     <url-pattern>/*</url-pattern>

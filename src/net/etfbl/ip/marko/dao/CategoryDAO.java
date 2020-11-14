@@ -44,7 +44,7 @@ public class CategoryDAO {
 		PreparedStatement ps = null;
 		ResultSet rs = null;
 		
-		String query = "insert into danger_category (name) values (?)";
+		String query = "insert into category (name) values (?)";
 		
 		try {
 			conn = ConnectionPool.getConnectionPool().checkOut();
